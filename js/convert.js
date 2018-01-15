@@ -7,11 +7,6 @@ let newProblem = document.getElementById("new-problem");
 let factorOneMax = document.querySelector("input[name='firstFactorMax']");
 let factorTwoMax = document.querySelector("input[name='secondFactorMax']");
 
-/*
-Make the page look nicer and smoother
-possibly change the color scheme
-*/
-
 init();
 
 function init() {

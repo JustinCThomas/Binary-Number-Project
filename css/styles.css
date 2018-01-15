@@ -5,13 +5,14 @@
 }
 
 body {
-  background: skyblue;
+  background-color: rgb(17, 17, 17);
+  color: rgb(10, 200, 10);
   text-align: center;
   font-family: sans-serif;
 }
 
 header {
-  background: rgb(220, 220, 220);
+  background: rgb(40, 40, 40);
   padding: 20px 0 20px 0;
 }
 
@@ -24,7 +25,7 @@ p {
 }
 
 #band {
-  background-color: white;
+  background-color: rgb(30, 30, 30);
   text-align: center;
   height: 50px;
   position: relative;
@@ -39,6 +40,7 @@ p {
 }
 
 button {
+  color: rgb(30, 220, 30);
   border: none;
   background: none;
   outline: none;
@@ -54,8 +56,8 @@ button {
 }
 
 button:hover {
-  color: blue;
-  background-color:  rgb(220, 220, 220);
+  background-color: rgb(40, 40, 40);
+  text-shadow: -2px -2px 0px gold, 2px 2px 0px gold, -2px 2px 0px gold, 2px -2px 0px gold;
 }
 
 .container {
@@ -66,7 +68,7 @@ button:hover {
 
 .container .number-box {
   padding-top: 30%;
-  background: orange;
+  background: rgb(40, 200, 40);
   border-radius: 15%;
   margin: 1.66%;
   width: 30%;
