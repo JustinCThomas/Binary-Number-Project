@@ -26,7 +26,7 @@ function setupGame() {
 
   for (let i = 0; i < numbers.length; i++) {
     let randomNum = getRandomNum();
-    numbers[i].textContent = randomNum;
+    numbers[i].textContent = randomNum.toString(2);
     if (x === i) {
       chooseEquation(randomNum);
     }
@@ -44,7 +44,7 @@ function addBoxEvents() {
 }
 
 function check(){
-  if ( (Number(this.textContent)) === (Number(value.textContent)) ) {
+  if ( (parseInt(this.textContent, 2)) === (Number(value.textContent)) ) {
     correctness.textContent = "Correct!";
     this.style.backgroundColor = "gold";
     removeBoxEvents();
