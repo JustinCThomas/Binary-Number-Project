@@ -1,14 +1,18 @@
 let numbers = document.getElementsByClassName("number");
 let numberBoxes = document.getElementsByClassName("number-box");
+let format = document.getElementById("format");
 let value = document.getElementById("value");
-let correctness = document.querySelector("#correctness");
+let swap = document.getElementById("swap");
+let correctness = document.getElementById("correctness");
 let newProblem = document.getElementById("new-problem");
+let convertToBinary = true;
 
 init();
 
 function init() {
   gameLogic()
   newProblemEvent();
+  swapFormatEvent();
 }
 
 function gameLogic() {
@@ -24,13 +28,24 @@ function getRandomNum() {
 function setupGame() {
   let x = Math.floor(Math.random() * numbers.length);
 
-  for (let i = 0; i < numbers.length; i++) {
-    let randomNum = getRandomNum();
-    numbers[i].textContent = randomNum.toString(2);
-    if (x === i) {
-      chooseEquation(randomNum);
+  if (convertToBinary) {
+    for (let i = 0; i < numbers.length; i++) {
+      let randomNum = getRandomNum();
+      numbers[i].textContent = randomNum.toString(2);
+      if (x === i) {
+        chooseEquation(randomNum);
+      }
+    }
+  } else {
+    for (let i = 0; i < numbers.length; i++) {
+      let randomNum = getRandomNum();
+      numbers[i].textContent = randomNum;
+      if (x === i) {
+        chooseEquation(randomNum.toString(2));
+      }
     }
   }
+
 }
 
 function chooseEquation(selectedNum) {
@@ -44,7 +59,10 @@ function addBoxEvents() {
 }
 
 function check(){
-  if ( (parseInt(this.textContent, 2)) === (Number(value.textContent)) ) {
+  if (convertToBinary ?
+    ( (parseInt(this.textContent, 2)) === (parseInt(value.textContent, 10)) )
+    :( (parseInt(this.textContent, 10)) === (parseInt(value.textContent, 2)) )  )
+   {
     correctness.textContent = "Correct!";
     this.style.backgroundColor = "gold";
     removeBoxEvents();
@@ -58,6 +76,19 @@ function removeBoxEvents() {
   for (let i = 0; i < numberBoxes.length; i++) {
     numberBoxes[i].removeEventListener('click', check);
   }
+}
+
+function swapFormatEvent() {
+  swap.addEventListener('click', function() {
+    if (convertToBinary) {
+      convertToBinary = false;
+      format.innerText = "base 10?";
+    } else {
+      convertToBinary = true;
+      format.innerText = "binary?";
+    }
+    newProblem.click();
+  });
 }
 
 function newProblemEvent() {
