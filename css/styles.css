@@ -50,9 +50,17 @@ button {
   font-size: 16px;
   padding: 2px;
   position: absolute;
+  transition: all .6s;
+}
+
+#swap {
+  right: calc(50% + 195px);
+  transform: translateX(20%);
+}
+
+#new-problem {
   left: calc(50% + 195px);
   transform: translateX(-20%);
-  transition: all .6s;
 }
 
 button:hover {
@@ -113,7 +121,10 @@ button:hover {
     font-size: 18px;
   }
 
-  button {
+  #swap {
+    right: calc(50% + 80px);
+  }
+  #new-problem {
     left: calc(50% + 80px);
   }
 }
