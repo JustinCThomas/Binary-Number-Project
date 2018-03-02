@@ -1,0 +1,23 @@
+{
+  "name": "binarynumberproject",
+  "description": "This program tests your binary to base 10 conversion skills.",
+  "version": "1.0.0",
+  "main": "convert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel --presets env js/convert.js -o js/convert-compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinCThomas/Binary-Number-Project.git"
+  },
+  "author": "JustinCThomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinCThomas/Binary-Number-Project/issues"
+  },
+  "homepage": "https://github.com/JustinCThomas/Binary-Number-Project#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
